@@ -49,4 +49,4 @@ jobs:
         uses: coverallsapp/github-action@1.0.1
         if: matrix.node == 10 && github.repository == 'twbs/bootstrap' && github.event_name == 'push'
         with:
-          github-token: "${{ secrets.github_token }}"
+          github-token: "${{ secrets.GITHUB_TOKEN }}"
