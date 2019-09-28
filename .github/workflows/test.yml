@@ -46,8 +46,7 @@ jobs:
           BROWSER_STACK_USERNAME: "${{ secrets.BROWSER_STACK_USERNAME }}"
 
       - name: Run Coveralls
-        run: npm run coveralls
+        uses: coverallsapp/github-action@1.0.1
         if: matrix.node == 10 && github.repository == 'twbs/bootstrap' && github.event_name == 'push'
-        env:
-          COVERALLS_REPO_TOKEN: "${{ secrets.COVERALLS_REPO_TOKEN }}"
-          COVERALLS_GIT_BRANCH: "${{ github.ref }}"
+        with:
+          github-token: "${{ secrets.github_token }}"
